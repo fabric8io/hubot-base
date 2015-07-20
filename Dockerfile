@@ -22,5 +22,3 @@ USER hubot
 RUN git clone https://github.com/fabric8io/fabric8-hubot-scripts.git && \
 	mv fabric8-hubot-scripts/*.coffee /home/hubot/scripts && \
 	rm -rf fabric8-hubot-scripts
-
-ADD external-scripts.json ./

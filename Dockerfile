@@ -15,10 +15,9 @@ WORKDIR /home/hubot
 # Add plugins
 RUN npm install --save hubot-jenkins-notifier hubot-grafana
 
+ADD https://raw.githubusercontent.com/fabric8io/fabric8-hubot-scripts/master/fabric8.coffee /home/hubot/scripts/
+ADD https://raw.githubusercontent.com/fabric8io/fabric8-hubot-scripts/master/jenkins.coffee /home/hubot/scripts/
+
 RUN chown -R hubot:hubot /home/hubot
 
 USER hubot
-
-RUN git clone https://github.com/fabric8io/fabric8-hubot-scripts.git && \
-	mv fabric8-hubot-scripts/*.coffee /home/hubot/scripts && \
-	rm -rf fabric8-hubot-scripts
